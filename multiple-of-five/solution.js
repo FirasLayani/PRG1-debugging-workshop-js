@@ -1,5 +1,5 @@
 function getLastDigit(num) {
-  return num.toString().slice(-1);
+  return Number(num.toString().slice(-1));
 }
 
 function isMultipleOfFive(n) {
