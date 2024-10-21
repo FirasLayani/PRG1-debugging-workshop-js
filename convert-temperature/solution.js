@@ -1,4 +1,4 @@
-function convertTemperature(temperature, toUnit, fromUnit) {
+function convertTemperature(temperature, fromUnit, toUnit) {
   // Check if the units are the same
   if (fromUnit === toUnit) {
     return Number(temperature.toFixed(2));
@@ -8,7 +8,7 @@ function convertTemperature(temperature, toUnit, fromUnit) {
 
   // Convert based on the fromUnit
   if (fromUnit === "C" && toUnit === "F") {
-    result = (temperature * 9) / 5 + 32;
+    result = temperature * 9 / 5 + 32;
   } else if (fromUnit === "F" && toUnit === "C") {
     result = ((temperature - 32) * 5) / 9;
   } else {
@@ -26,3 +26,4 @@ console.log(convertTemperature(0, "C", "F")); // Should output: 32
 console.log(convertTemperature(100, "C", "F")); // Should output: 212
 console.log(convertTemperature(32, "F", "C")); // Should output: 0
 console.log(convertTemperature(98.6, "F", "C")); // Should output: 37
+console.log(convertTemperature(100, "C", "C")); // Should output: 100
